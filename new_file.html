@@ -1,0 +1,48 @@
+        <%
+	String parentId = (String)<$top_parentid$>;
+	if("".equals(parentId)){
+		
+%>
+        <rs id="rs1" sql=<%="select id,name,parentid,code from topic where siteid = "+<$site_id$>+" and parentid = "+<$top_id$>+" order by idx" %> rows=1>
+			<%
+				String selId = (String)<$rs1.id$>;
+				String selParentId = (String)<$rs1.parentid$>;
+				String selCodeUrl = "/shtml/"+(String)<$site_id$>+"/"+((String)<$rs1.code$>).replace(".","/");
+				//子栏目
+				if(selId.equals((String)<$top_id$>)||selParentId.equals((String)<$top_id$>)){
+					
+					
+			%>
+					<rs id="rs2" sql=<%="select id,name,parentid,code from topic where parentid = "+<$rs1.id$>+"  order by idx" %> rows=1> 
+						 <% selCodeUrl = "/shtml/"+(String)<$site_id$>+"/"+((String)<$rs2.code$>).replace(".","/"); %>
+					</rs>
+					<li  ><a <%if(selId.equals((String)<$top_id$>)){out.print("style='background:#0E63C3;color:#fff;'");}%> href="<% out.print(selCodeUrl);%>"><$rs1.name$></a></li>
+			<%	
+				}
+			%>
+		</rs>
+        <%
+	}else{
+%>
+        <rs id="rs1" sql=<%="select id,name,parentid,code from topic where siteid = "+<$site_id$>+" and parentid = "+<$top_id$>+" order by idx" %> rows=1>
+			<%
+				
+				String selId = (String)<$rs1.id$>;
+				String selParentId = (String)<$rs1.parentid$>;
+				String selCodeUrl = "/shtml/"+(String)<$site_id$>+"/"+((String)<$rs1.code$>).replace(".","/");
+				//子栏目
+				if(selId.equals(parentId)||selParentId.equals(parentId)){
+			%>
+					<rs id="rs2" sql=<%="select id,name,parentid,code from topic where parentid = "+<$rs1.id$>+" order by idx" %> rows=1> 
+						  <% selCodeUrl = "/shtml/"+(String)<$site_id$>+"/"+((String)<$rs2.code$>).replace(".","/"); %>
+					</rs>
+			
+					<li ><a <%if(selId.equals(parentId)){out.print("style='background:#0E63C3;color:#fff;'");}%> href="<% out.print(selCodeUrl);%>"><$rs1.name$></a></li>
+			<%	
+				}
+			%>
+		</rs>
+        <%
+	}
+%>
+    

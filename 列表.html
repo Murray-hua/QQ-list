@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> <$top_name$>|<$site_name$> </title>
+<link href="<$site_rooturl$>/images/main_zhuhai.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="<$site_rooturl$>/images/jquery.1.4.2-min.js"></script>
+<script type="text/javascript" src="<$site_rooturl$>/images/date.js"></script>
+<script type="text/javascript" src="<$site_rooturl$>/images/prototype.js"></script>
+<script type="text/javascript" src="<$site_rooturl$>/images/page.js"></script>
+<script type="text/javascript" src="<$site_rooturl$>/images/contentpage.js"></script>
+<!--<script type="text/javascript" src="<$site_rooturl$>/images/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="<$site_rooturl$>/images/scroll_pic.js"></script>
+<script type="text/javascript" src="<$site_rooturl$>/images/MSClass2.9.120108.js"></script>
+<script src="<$site_rooturl$>/images/menu-collapsed.js" type="text/javascript"></script> -->
+
+</head>
+<body xmlns="">
+        <div class="header"><!--#include virtual="<$site_rooturl$>/header.shtml"--></div>
+        <!--header-->
+        <div class="nofloat"><!--header--></div>
+        <div class="main"><!--<ul class="tabbtn" id="move-animate-left">-->
+        <ul id="Tabbtn" class="tabbtn">
+            <li class="current"><a target="_blank" href="<$site_rooturl$>/index.shtml">首页</a></li>
+            <li><a target="_blank" href="<$site_rooturl$>/lanmu01">珠海概览</a></li>
+            <li><a target="_blank" href="<$site_rooturl$>/zhfq">珠海风情</a></li>
+            <li><a target="_blank" href="<$site_rooturl$>/dqsjk">地情数据库</a></li>
+            <li><a target="_blank" href="<$site_rooturl$>/fzgz">史志工作</a></li>
+            <li><a target="_blank" href="<$site_rooturl$>/xqzj">县区志</a></li>
+        </ul>
+        <!--tabbtn end-->
+        <div class="nofloat"><!--nofloat--></div>
+        <div class="list_content">
+        <div class="list_left">
+        <ul id="menu_list">
+            <ul id="menu_list">
+                <li>
+                <ul id="child_list">
+<!--#include virtual="<$site_rooturl$>/<$top_path$>aside.shtml"-->
+</ul>
+                    </li>
+                </ul>
+                <!--<li><a style="display: block" href="<$top_url$>"><$top_name$></a>
+            <ul id="child_list">
+                <map id="maptop" topic=<$top_code$> >
+     <li><a href="<$site_rooturl$>/<$maptop.top_url$>"><$maptop.top_name$></a></li>
+</map>
+            </ul>--></ul>
+                </div>
+                <div class="list_right">
+                <div class="con_main_text">
+                <div class="con_main_nav">
+                <div class="h2">您现在的位置：<a href="<$site_rooturl$>/index.shtml">首页</a>><$top_fullnav$></div>
+                </div>
+                <!--<div class="con_main_title">
+</div>-->
+                <div class="con_main_content">
+                <ul class="sec_listhome">
+                    <rs id="rslist" topic=<$top_code$> page=20 >
+	<li><span class="listdate"><$rslist.art_publishdate("yyyy-MM-dd")$></span><a href="<$rslist.art_url$>" target="_self"><$rslist.art_title("25,...")$></a></li>
+</rs>
+                </ul>
+                </div>
+                <!--con_main_content--></div>
+                <!--con_main_text--></div>
+                <!--list_right--></div>
+                <!--list_content-->
+                <div class="nofloat"><!--nofloat--></div>
+                </div>
+                <div class="nofloat"><!--footer--></div>
+                <div class="footer">
+                <div class="footerpage"><!--#include virtual="<$site_rooturl$>/footer.shtml"--></div>
+                </div>
+                <!--<script type="text/javascript" src="images/jquery.tabso_yeso.js"></script>
+<script type="text/javascript">  
+//左右滑动选项卡切换
+	$("#move-animate-left").tabso({
+		cntSelect:"#leftcon",
+		tabEvent:"mouseover",
+		tabStyle:"move-animate",
+		direction : "left"
+	});
+	
+	
+</script>--><!--<script type="text/javascript">
+window.onload=function(){
+var ul = document.getElementById("Tabbtn");
+var li = ul.getElementsByTagName("li");
+for(var i=0;i<li.length;i++){
+  li[i].onmouseover=function(){
+  for(var j=0;j<li.length;j++){
+   li[j].className=""
+  }
+  this.className="current"
+  }
+}
+}
+
+</script>--><script type="text/javascript">
+window.onload = function ()
+{
+ var ul = document.getElementById("Tabbtn");
+ var li = ul.getElementsByTagName("li");
+ for (i = 0; i < li.length; i++)
+ {  
+  li[i].onclick = function ()
+  {
+   for (i = 0; i < li.length; i++){
+   li[i].className = "";}
+   this.className = "current";
+  };
+  li[i].onmouseover=function(){
+  for(var j=0;j<li.length;j++){
+   li[j].className=""
+  }
+  this.className="current"
+  }
+ }
+};
+</script><!--<script type="text/javascript">
+   $("#child_list li a").click(function(){
+     $("#child_list li a").removeClass('select_li');
+     $(this).addClass('select_li');
+   })
+</script>-->
+            </body>
+        </html>
